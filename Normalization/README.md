@@ -11,27 +11,32 @@ the `misc` module.
 The models used in the Pre- Vs. Post-Up experiment are stored in their own sub-module.
 
 
-## 1. Get the datasets
+## Setup
+
+### 1. Get the Datasets
 All csv files must be placed directly into the `./Datasets` directory.
 There are two different sources, one for the standard datasets (e.g. ETT benchmark, etc.) and the other one for the remaining datasets (like PEMS-BAY, METR-LA, etc.):
 1. The [LSTF-Linear](https://github.com/cure-lab/LTSF-Linear) repository (see Getting Started -> Data Preparation)
 2. The [TFB](https://github.com/decisionintelligence/TFB) repository (see Quickstart -> Data preparation)<br/>
 
+### 2. Setup the Environment
+The project’s dependencies are listed in the `pyproject.toml` file and can be easily installed using a Python project management tool. For example, by running the `uv sync` command with `uv`.
 
-## Train a Model
-
-### 1. Add the `xLSTF` module to the PYTHONPATH environmental variable
+### 3. Add the project to the `PYTHONPATH` environmental variable
 ```bash
 export PYTHONPATH=$PYTHONPATH:/path/to/xLSTF/Normalization
 ```
+To ensure that the Python interpreter can locate the source code of the project, add the absolute path to the `Normalization` directory to the `PYTHONPATH` environment variable.
 
-### 2. Run the training script
+## Usage
+The project offers two recommended usage patterns. The first method trains a specified model on a single dataset using a defined configuration, while the second method employs shell scripts to evaluate the specified model across all available datasets and configurations.
+
+### 1. Run the training script
 ```bash
 python3 xLSTF/cli.py --dataset <dataset-name:str> --model <model-name:str> --lookback-window <seq_len:int> --forecasting-horizon <pred_len:int>
 ```
 
-
-## Evaluate multiple models using the evaluation scripts
+### 2. Evaluate multiple models using the evaluation scripts
 Sequentially evaluating multiple models can be done using the scripts provided in the `Scripts` directory.
 The `run_LocalExperiment.sh` evaluates the provided model on all standard datasets with lookback-window of 336/104 and their corresponding forecasting horizons
 ```bash
