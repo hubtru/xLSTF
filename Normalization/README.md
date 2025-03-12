@@ -33,23 +33,23 @@ The project offers two recommended usage patterns. The first method trains a spe
 
 ### 1. Run the training script
 ```bash
-python3 xLSTF/cli.py --dataset <dataset-name:str> --model <model-name:str> --lookback-window <seq_len:int> --forecasting-horizon <pred_len:int>
+python3 Normalization/cli.py --dataset <dataset-name:str> --model <model-name:str> --lookback-window <seq_len:int> --forecasting-horizon <pred_len:int>
 ```
 
 ### 2. Evaluate multiple models using the evaluation scripts
 Sequentially evaluating multiple models can be done using the scripts provided in the `Scripts` directory.
 The `run_LocalExperiment.sh` evaluates the provided model on all standard datasets with lookback-window of 336/104 and their corresponding forecasting horizons
 ```bash
-./xLSTF/Scripts/run_LocalExperiment.sh <model-name:str> <dataset-selector:str>
+./Normalization/Scripts/run_LocalExperiment.sh <model-name:str> <dataset-selector:str>
 ```
 The `dataset-selector` has only three valid value `all`, `standard`, and `extended`. With `all` meaning that all datasets of the TFB benchmark will be used for evaluation, `standard` meaning that only the standard datasets are used for evaluation (e.g. ETT, Traffic, etc.), and `extended` meaning that only the remaining datasets (e.g. PEMS-BAY, METR-LA, etc.).<br/>
 
 After the scripts has finished, the results of the run can be found in the `xLSTF/Logs/csv_logs/<dataset>.csv` file.
 If all models should be evaluated (or only the models from certain experiments), there are special tags to pass to the `run_LocalExperiment.sh` scripts
 ```bash
-./xLSTF/Scripts/run_LocalExperiemnt.sh all <dataset-selector:str> # this evaluates all models
-./xLSTF/Scripts/run_LocalExperiemnt.sh linear <dataset-selector:str> # this evaluates only the linear models
-./xLSTF/Scripts/run_LocalExperiemnt.sh fan <dataset-selector:str> # this evaluates only the fourier analysis models
-./xLSTF/Scripts/run_LocalExperiemnt.sh xlstm <dataset-selector:str> # this evaluates all xlstm-based models
+./Normalization/Scripts/run_LocalExperiemnt.sh all <dataset-selector:str> # this evaluates all models
+./Normalization/Scripts/run_LocalExperiemnt.sh linear <dataset-selector:str> # this evaluates only the linear models
+./Normalization/Scripts/run_LocalExperiemnt.sh fan <dataset-selector:str> # this evaluates only the fourier analysis models
+./Normalization/Scripts/run_LocalExperiemnt.sh xlstm <dataset-selector:str> # this evaluates all xlstm-based models
 
 ```
