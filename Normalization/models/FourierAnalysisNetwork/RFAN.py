@@ -1,6 +1,6 @@
 import torch
 
-from xLSTF.models import BaseModel
+from Normalization.models import BaseModel
 
 from ..normalization import RevIN
 from .DFAN import DFAN

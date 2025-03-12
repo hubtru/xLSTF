@@ -1,8 +1,8 @@
 import torch
 
-from xLSTF.models import BaseModel
-from xLSTF.models.linear import NLinear
-from xLSTF.models.normalization import RevIN
+from Normalization.models import BaseModel
+from Normalization.models.linear import NLinear
+from Normalization.models.normalization import RevIN
 
 
 class Baseline(BaseModel):

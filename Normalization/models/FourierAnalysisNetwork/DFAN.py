@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from xLSTF.models import BaseModel
-from xLSTF.models.utils import SeriesDecomposition
+from Normalization.models import BaseModel
+from Normalization.models.utils import SeriesDecomposition
 
 from .FAN import FAN
 

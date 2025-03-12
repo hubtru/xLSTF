@@ -4,8 +4,8 @@ from typing import Literal, Optional, Tuple, Type, Union
 import lightning.pytorch as L
 from torch.utils.data import DataLoader
 
-from TSxLSTM.data import CustomDataset, ETThxDataset, ETTmxDataset
-from TSxLSTM.data.ThreeColumnDataset import ThreeColumnDataset
+from Normalization.data import CustomDataset, ETThxDataset, ETTmxDataset
+from Normalization.data.ThreeColumnDataset import ThreeColumnDataset
 
 
 def get_dataset(

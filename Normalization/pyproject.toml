@@ -10,6 +10,11 @@ dependencies = [
     "pandas>=2.2.3",
     "prettytable>=3.12.0",
     "scikit-learn>=1.6.1",
-    "torch>=2.5.1",
+    "torch==2.5.1",
     "xlstm>=2.0.2",
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

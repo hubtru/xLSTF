@@ -7,10 +7,10 @@ from torch import Tensor, nn
 from xlstm import (mLSTMBlockConfig, sLSTMBlockConfig, sLSTMLayerConfig,
                    xLSTMBlockStack, xLSTMBlockStackConfig)
 
-from xLSTF.models import BaseModel
-from xLSTF.models.linear import DLinear, NLinear
-from xLSTF.models.normalization import RevIN
-from xLSTF.models.utils import SeriesDecomposition
+from Normalization.models import BaseModel
+from Normalization.models.linear import DLinear, NLinear
+from Normalization.models.normalization import RevIN
+from Normalization.models.utils import SeriesDecomposition
 
 
 class xLSTMMixer(BaseModel):

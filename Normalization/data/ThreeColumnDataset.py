@@ -6,7 +6,7 @@ import torch
 from sklearn import preprocessing
 from torch.utils.data import Dataset
 
-from TSxLSTM.data.utils import getitem, read_data
+from Normalization.data.utils import getitem, read_data
 
 DATASET_SPLITS = {
     "AQShunyi.csv": (0.6, 0.2, 0.2),

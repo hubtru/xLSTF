@@ -9,12 +9,12 @@ import lightning.pytorch as L
 import torch
 from lightning.pytorch.loggers import CSVLogger
 
-from xLSTF.callbacks import LossCallback, ParameterCounterCallback
-from xLSTF.data.DataModule import DataModule
-from xLSTF.model_wrapper import ModelWrapper
-from xLSTF.models import (BaseModel, FourierAnalysisNetwork, PreVsPostUp,
+from Normalization.callbacks import (LossCallback, ParameterCounterCallback)
+from Normalization.data.DataModule import DataModule
+from Normalization.model_wrapper import ModelWrapper
+from Normalization.models import (BaseModel, FourierAnalysisNetwork, PreVsPostUp,
                             linear, misc, xLSTM)
-from xLSTF.utils import get_model_str
+from Normalization.utils import get_model_str
 
 STANDARD_DATASETS = {
     "electricity.csv": 321,
@@ -99,7 +99,7 @@ def setup_directories(base_dir: Optional[Path] = None) -> Tuple[Path, Path, Path
     data_dir = base_dir.parent / "Datasets"
     checkpoints_dir = base_dir / "Checkpoints"
 
-    for path in [raw_logging_dir, csv_dir, checkpoints_dir]:
+    for path in [logging_dir, raw_logging_dir, csv_dir, checkpoints_dir]:
         if not path.exists():
             path.mkdir()
     return raw_logging_dir, csv_dir, data_dir, checkpoints_dir

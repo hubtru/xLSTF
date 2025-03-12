@@ -6,7 +6,7 @@ from torch import nn
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
 
-from xLSTF.utils import flatten_dict
+from Normalization.utils import flatten_dict
 
 
 def stat_loss(

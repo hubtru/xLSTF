@@ -4,9 +4,9 @@ from typing import List, Optional, Tuple
 import torch
 import torch.nn as nn
 
-from xLSTF.models import BaseModel
-from xLSTF.models.misc.FrequencyEnhancedLayer import FrequencyEnhancedLayer
-from xLSTF.models.normalization import LegendreProjectionUnit
+from Normalization.models import BaseModel
+from Normalization.models.misc.FrequencyEnhancedLayer import FrequencyEnhancedLayer
+from Normalization.models.normalization import LegendreProjectionUnit
 
 
 class FiLM(BaseModel):

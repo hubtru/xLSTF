@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from xLSTF.models import BaseModel
-from xLSTF.utils import get_activation_fn
+from Normalization.models import BaseModel
+from Normalization.utils import get_activation_fn
 
 
 class FAN(BaseModel):

@@ -3,8 +3,8 @@ from typing import Optional
 import torch
 from torch import nn
 
-from xLSTF.models import BaseModel
-from xLSTF.models.normalization import LegendreProjectionUnit, RevIN
+from Normalization.models import BaseModel
+from Normalization.models.normalization import LegendreProjectionUnit, RevIN
 
 
 class LegendreLinear(BaseModel):

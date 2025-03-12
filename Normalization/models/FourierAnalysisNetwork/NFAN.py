@@ -1,6 +1,6 @@
 import torch
 
-from xLSTF.models import BaseModel
+from Normalization.models import BaseModel
 
 from . import FAN
 

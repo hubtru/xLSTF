@@ -5,9 +5,9 @@ import torch
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
 
-from xLSTF.metrics import AVAILABLE_METRICS
-from xLSTF.models import BaseModel
-from xLSTF.models.normalization import FAN, DishTS
+from Normalization.metrics import AVAILABLE_METRICS
+from Normalization.models import BaseModel
+from Normalization.models.normalization import FAN, DishTS
 
 LOSS_FN = {"MSE": F.mse_loss, "MAE": F.l1_loss}
 

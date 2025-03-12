@@ -3,7 +3,7 @@ from typing import Literal, Tuple
 import numpy as np
 from lightning import pytorch as L
 
-from xLSTF.utils import count_parameters
+from Normalization.utils import count_parameters
 
 
 class ParameterCounterCallback(L.Callback):

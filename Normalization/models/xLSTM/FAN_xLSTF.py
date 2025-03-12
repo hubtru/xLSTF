@@ -2,7 +2,7 @@ from typing import Tuple
 
 import torch
 
-import xLSTF
+import Normalization
 
 from ..BaseModel import BaseModel
 from ..normalization import FAN
@@ -26,7 +26,7 @@ class FAN_xLSTF(BaseModel):
             output_sequence_length=output_sequence_length,
             num_features=num_features,
         )
-        self.backbone = xLSTF.models.xLSTM.xLSTF(
+        self.backbone = Normalization.models.xLSTM.xLSTF(
             input_sequence_length=input_sequence_length,
             output_sequence_length=output_sequence_length,
             num_features=num_features,

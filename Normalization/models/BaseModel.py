@@ -5,7 +5,7 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader
 
-from xLSTF.models.utils import format_instance_str
+from Normalization.models.utils import format_instance_str
 
 
 class BaseModel(nn.Module):

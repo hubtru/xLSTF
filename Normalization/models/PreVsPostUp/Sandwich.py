@@ -3,11 +3,11 @@ from typing import Optional
 import torch
 from torch import nn
 
-from xLSTF.models import BaseModel
-from xLSTF.models.linear import NLinear
-from xLSTF.models.normalization import RevIN
-from xLSTF.models.PreVsPostUp.utils import SkipConnectionType
-from xLSTF.utils import ActivationFn, get_activation_fn
+from Normalization.models import BaseModel
+from Normalization.models.linear import NLinear
+from Normalization.models.normalization import RevIN
+from Normalization.models.PreVsPostUp.utils import SkipConnectionType
+from Normalization.utils import ActivationFn, get_activation_fn
 
 
 class Sandwich(BaseModel):

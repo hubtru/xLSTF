@@ -3,7 +3,7 @@ from typing import Literal, Optional
 import torch
 from torch import nn
 
-import xLSTF
+import Normalization
 
 from ..BaseModel import BaseModel
 from ..normalization import DishTS
@@ -28,7 +28,7 @@ class Dish_xLSTF(BaseModel):
         self.norm = DishTS(
             input_sequence_length, num_features, dish_alpha, dish_init, dish_activation
         )
-        self.backbone = xLSTF.models.xLSTM.xLSTF(
+        self.backbone = Normalization.models.xLSTM.xLSTF(
             input_sequence_length=input_sequence_length,
             output_sequence_length=output_sequence_length,
             num_features=num_features,
