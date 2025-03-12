@@ -57,7 +57,6 @@ class DataModule(L.LightningDataModule):
         root_dir: Path,
         filename: str,
         batch_size: int,
-        features: Literal["S", "M", "MS"] = "M",
         size: Optional[Tuple[int, int, int]] = None,
         num_workers: int = 4,
     ) -> None:
