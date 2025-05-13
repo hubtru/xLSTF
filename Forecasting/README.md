@@ -49,4 +49,32 @@ If all models should be evaluated (or only the models from certain experiments),
 ```bash
 ./Forecasting/Scripts/run_LocalExperiemnt.sh xlstm <dataset-selector:str> # this evaluates all xlstm-based models
 ```
-Two models named TSxLSTM_MBl and TSxLSTM_MBl_Variant are added to the xlstm based models, which are only using one xLSTM Block with the mLSTM. The TSxLSTM_MBl_Variant uses the NLinear model in its architeture and the conv layer is removed from the xlstm package. Additionaly a linear pattern extractor is added. 
+
+## TSxLSTM MBlock Variants added to xlstm-based models
+
+TSxLSTM\_MBl: This model maintains the standard architecture using one xLSTM Block with an mLSTM.
+
+notebook example can be found here:
+``
+"/xLSTF/Forecasting/Notebooks/mainTSxLSTM.ipynb"
+``
+
+TSxLSTM\_MBl\_Variant: This enhanced model incorporates multiple improvements:
+  - Uses the NLinear model in its architecture.
+  - Adds a linear pattern extractor based on DUET, same as DLinears decomposition.
+  - Removes the convolutional layer (conv1d) from the xLSTM package.
+  
+notebook example can be found here:
+``
+"/xLSTF/Forecasting/Notebooks/mainTSxLSTM_Best.ipynb"
+``
+
+The convolutional layer (conv1d) and swish activation are removed inside the xLSTM Package. Changes can be found here:
+``
+/xLSTF/Forecasting/models/xlstmMBlock/xlstm/blocks/mlstm/layer.py
+``
+
+The linear pattern extractor from DUET and the DLinear decomposition, can be found here:
+``
+/xLSTF/Forecasting/models/decomp
+``
