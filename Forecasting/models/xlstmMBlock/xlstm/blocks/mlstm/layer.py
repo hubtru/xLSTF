@@ -1,5 +1,7 @@
 # Copyright (c) NXAI GmbH and its affiliates 2024
 # Maximilian Beck
+
+# modifed package and removed conv1d and swish (removed original lines 75-81, 109, 110)
 from dataclasses import dataclass
 
 import torch
@@ -68,7 +70,6 @@ class mLSTMLayer(nn.Module):
                 bias=self.config.bias,
             )
         )
-
         self.mlstm_cell = mLSTMCell(
             config=mLSTMCellConfig(
                 context_length=self.config.context_length,

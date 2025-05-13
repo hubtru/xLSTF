@@ -1,9 +1,9 @@
-# xLSTF Forecasting
+# TSxLSTM Forecasting
 
 ## Description of the Project Structure
-The `models` subdirectory contains four python module with model definitions. Starting with the `Forecasting` module,
+The `models` subdirectory contains four python module with model definitions. Starting with the `normalization` module,
 this defines all Forecasting the definition of all Forecastings evaluated and that can be used in models.
-Meanwhile, the `linear`, `fan` and `xlstm` modules host the definitions from the actual forecasting models (those use the Forecasting methods define in the `Forecasting` module).
+Meanwhile, the `linear`, `fan` and `xlstm` modules host the definitions from the actual forecasting models (those use the Forecasting methods define in the `normalization` module).
 
 All models that are not easily classifiable into one of the model categories (`linear`, `fan` and `xlstm`) are stored in
 the `misc` module.
@@ -47,9 +47,6 @@ The `dataset-selector` has only three valid value `all`, `standard`, and `extend
 After the scripts has finished, the results of the run can be found in the `xLSTF/Logs/csv_logs/<dataset>.csv` file.
 If all models should be evaluated (or only the models from certain experiments), there are special tags to pass to the `run_LocalExperiment.sh` scripts
 ```bash
-./Forecasting/Scripts/run_LocalExperiemnt.sh all <dataset-selector:str> # this evaluates all models
-./Forecasting/Scripts/run_LocalExperiemnt.sh linear <dataset-selector:str> # this evaluates only the linear models
-./Forecasting/Scripts/run_LocalExperiemnt.sh fan <dataset-selector:str> # this evaluates only the fourier analysis models
 ./Forecasting/Scripts/run_LocalExperiemnt.sh xlstm <dataset-selector:str> # this evaluates all xlstm-based models
-
 ```
+Two models named TSxLSTM_MBl and TSxLSTM_MBl_Variant are added to the xlstm based models, which are only using one xLSTM Block with the mLSTM. The TSxLSTM_MBl_Variant uses the NLinear model in its architeture and the conv layer is removed from the xlstm package. Additionaly a linear pattern extractor is added. 
