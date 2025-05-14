@@ -18,7 +18,7 @@ else
     else
       if [ "$model_selector" = "xlstm" ]
       then
-        models_to_evaluate=("xLSTF" "TSxLSTM_MBl" "TSxLSTM_MBl_Variant")
+        models_to_evaluate=("xLSTF" "TSxLSTM_MBl" "TSxLSTM_MBl_Variant" "TSxLSTM_SBl" "TSxLSTM_SBl_Variant")
       else
         models_to_evaluate=("$1")
       fi
